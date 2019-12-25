@@ -1,13 +1,13 @@
-package com.hyunwoo.practice;
+package com.hyunwoo.book.springboot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PracticeApplication {
+public class Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(PracticeApplication.class, args);
+        SpringApplication.run(Application.class, args);
     }
 
 }

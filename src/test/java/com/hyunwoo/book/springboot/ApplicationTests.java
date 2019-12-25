@@ -1,10 +1,10 @@
-package com.hyunwoo.practice;
+package com.hyunwoo.book.springboot;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class PracticeApplicationTests {
+class ApplicationTests {
 
     @Test
     void contextLoads() {
