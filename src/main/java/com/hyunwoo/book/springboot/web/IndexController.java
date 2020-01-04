@@ -1,5 +1,6 @@
 package com.hyunwoo.book.springboot.web;
 
+import com.hyunwoo.book.springboot.config.auth.LoginUser;
 import com.hyunwoo.book.springboot.config.auth.dto.SessionUser;
 import com.hyunwoo.book.springboot.domain.user.User;
 import com.hyunwoo.book.springboot.service.posts.PostsService;
@@ -20,18 +21,13 @@ public class IndexController {
     private final HttpSession httpSession;
 
     @GetMapping("/")
-    public String index(Model model) {
+    public String index(Model model, @LoginUser SessionUser user) {
         model.addAttribute("posts", postsService.findAllDesc());
-
-        SessionUser user = (SessionUser) httpSession.getAttribute("user");
-
         if (user != null) {
             model.addAttribute("userName", user.getName());
         }
-
         return "index";
     }
-
     @GetMapping("/posts/save")
     public String postsSave() {
         return "posts-save";
